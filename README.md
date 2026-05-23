@@ -56,16 +56,23 @@ const userResponse = await fetch("https://api.github.com/users/YOUR_USERNAME");
 ### 3. Images
 Place your profile photos and project images in the `public/img/` directory.
 
-## 🌐 Deployment on Vercel
+## 🌐 Deployment on Netlify
 
-The easiest way to deploy this portfolio is using [Vercel](https://vercel.com):
+The easiest way to deploy this portfolio is using [Netlify](https://netlify.com):
 
 1. Push your code to a GitHub repository.
-2. Go to the [Vercel Dashboard](https://vercel.com/dashboard).
-3. Click **"New Project"** and import your repository.
-4. Vercel will automatically detect Next.js settings.
-5. Click **"Deploy"**.
-6. Your site will be live on a `*.vercel.app` domain!
+2. Go to the [Netlify Dashboard](https://app.netlify.com/).
+3. Click **"Add new site"** -> **"Import an existing project"**.
+4. Select **GitHub** and authorize Netlify to access your repository.
+5. Select your portfolio repository.
+6. Netlify will automatically detect the settings from `netlify.toml`:
+   - **Build Command**: `npm run build`
+   - **Publish directory**: `.next`
+7. Click **"Deploy Portfolio"**.
+8. Your site will be live on a `*.netlify.app` domain!
+
+### 💡 Why Netlify?
+We have included a `netlify.toml` file that pre-configures the build environment and ensures the `@netlify/plugin-nextjs` is used for optimal Next.js performance on their platform.
 
 ## 📄 License
 
