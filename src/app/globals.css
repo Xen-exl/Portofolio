@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #111827;
+  --surface: #F8FAFC;
+  --border: #EEF2F7;
+  --muted: #F1F5F9;
+  --muted-foreground: #6B7280;
+  --accent-primary: #2563EB;
+  --accent-secondary: #4F46E5;
+  --font-inter: 'Inter', sans-serif;
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+}
+
+.dark {
+  --background: #0F1115;
+  --foreground: #F5F7FA;
+  --surface: #151821;
+  --border: #1A1D26;
+  --muted: #1E293B;
+  --muted-foreground: #9BA3AF;
+  --accent-primary: #3B82F6;
+  --accent-secondary: #6366F1;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-inter);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .premium-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    @apply rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] dark:shadow-none transition-all duration-300;
+  }
+  
+  .premium-card-hover {
+    @apply hover:shadow-sm transition-all duration-300;
+  }
+
+  .clean-button-primary {
+    background-color: var(--accent-primary);
+    color: white;
+    @apply px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-all active:scale-[0.98];
+  }
+
+  .clean-button-secondary {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--foreground);
+    @apply px-6 py-3 rounded-lg font-medium transition-all active:scale-[0.98];
+  }
+
+  .clean-button-secondary:hover {
+    background-color: var(--muted);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-lg mb-8;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
