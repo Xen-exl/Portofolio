@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={cn(inter.variable, spaceGrotesk.variable, "font-sans antialiased")}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
